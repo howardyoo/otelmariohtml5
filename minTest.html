@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Infinite Mario - JavaScript</title>
+		<link rel="shortcut icon" href="https://www.honeycomb.io/wp-content/themes/honeycomb/assets/img/favicon/favicon.ico">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		<style type="text/css">
+			html, body {
+				font-family: Roboto;
+				height: 100%;
+				margin: 20px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+			}
+
+			canvas {
+				border:1px solid gray;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div>
+			<h1>Javascript Mario Brothers HTML5 Game</h1>
+		</div>
+		<div>
+			<p>This game is a version of <a href="https://github.com/robertkleffner/mariohtml5">mariohtml5</a> game that runs
+			on Web browser using HTML5. Use keypad for directions, and s for start, jump, and a for attack</p>
+			<p>Ths game is also instrumented using 
+			Honeycomb's <a href="https://docs.honeycomb.io/get-started/start-building/web/">frontend observability</a> package.</p>
+		</div>
+		<div>
+		<canvas id="canvas" width="640" height="480">
+			<p>Your browser does not support the canvas element.</p>
+		</canvas>
+		</div>
+        
+		<script src="enjine.min.js"></script>
+		<script src="mario.min.js"></script>
+        <script>
+			$(document).ready(function() { new Enjine.Application().Initialize(new Mario.LoadingState(), 320, 240) });
+		</script>
+		<script src="otel-load.js"></script>
+	</body>
+</html>
